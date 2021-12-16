@@ -1,5 +1,6 @@
 # ------------------------------------------------------------------------------
 
+
 - name: Fetch and run Poetry installer script
   shell: |
     if ! ~/.local/bin/poetry --version | grep -q '{{ poetry_version }}$'; then
@@ -15,8 +16,10 @@
 
 - { name: "Debug", debug: { var: task.stdout_lines }, tags: [debug] }
 
+
 # ------------------------------------------------------------------------------
 # Zsh
+
 
 - name: "zsh : Setup completion"
   ansible.builtin.shell: |
@@ -47,8 +50,10 @@
   register: task
   changed_when: "'status=changed' in task.stdout"
 
+
 # ------------------------------------------------------------------------------
 # Bash
+
 
 - name: "bash : Setup completion"
   ansible.builtin.shell: |
@@ -70,3 +75,6 @@
   args: { executable: /usr/bin/bash, warn: false }
   register: task
   changed_when: "'status=changed' in task.stdout"
+
+
+# ------------------------------------------------------------------------------
