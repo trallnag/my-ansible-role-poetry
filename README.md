@@ -9,6 +9,6 @@ Role that installs Poetry.
 
 ## FAQ
 
-### Bump version of pipx?
+### How to set the version of Poetry?
 
 Go into [vars/main.yaml](vars/main.yaml) and bump the version.
